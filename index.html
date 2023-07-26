@@ -47,7 +47,7 @@
               <label tabindex="0" class="btn btn-ghost lg:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
               </label>
-              <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-base">
+              <ul tabindex="0" class="menu menu-sm dropdown-content top-full right-0 mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-base">
               <li><a>Home</a></li>
               <li><a>About Us</a></li>
               <li><a>Shop</a></li>
@@ -66,11 +66,14 @@
             <a class="btn btn-ghost normal-case text-2xl md:text-4xl">Fruit Burst</a>
           </div>
           <div class="hidden md:navbar-end md:block">
+           <div class="relative z-10">
             <input type="text" placeholder="Search here" class="input input-bordered input-secondary w-full rounded-full max-w-xs" />
+            <i class="fa-solid fa-magnifying-glass text-black text-lg absolute z-20 left-44 top-3"></i>
+           </div>
           </div>
         </div> 
         <!-- This is banner section -->
-        <section>
+        <section> 
           <div class="carousel w-full">
             <!-- First Slide -->
             <div id="slide1" class="carousel-item relative w-full">
@@ -184,25 +187,28 @@
               </div>
               <div>
                 <!-- countdown -->
-                <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
+                <div class="grid grid-flow-col gap-5 text-center items-center justify-center auto-cols-max">
                   <div class="flex flex-col">
                     <span class="countdown font-mono text-5xl">
                       <span style="--value:15;"></span>
                     </span>
                     days
-                  </div> 
+                  </div>
+                  <i class="fa-solid fa-ellipsis-vertical mb-3"></i>
                   <div class="flex flex-col">
                     <span class="countdown font-mono text-5xl">
                       <span style="--value:10;"></span>
                     </span>
                     hours
                   </div> 
+                  <i class="fa-solid fa-ellipsis-vertical mb-3"></i>
                   <div class="flex flex-col">
                     <span class="countdown font-mono text-5xl">
                       <span style="--value:24;"></span>
                     </span>
                     min
                   </div> 
+                  <i class="fa-solid fa-ellipsis-vertical mb-3"></i>
                   <div class="flex flex-col">
                     <span class="countdown font-mono text-5xl">
                       <span style="--value:11;"></span>
@@ -240,7 +246,46 @@
 
                 <!-- rating end -->
                 <div class="card-actions">
-                  <button class="btn text-primary-text-color font-bold" onclick="det-1.showModal()">Details</button>
+                  <button class="btn text-primary-text-color font-bold" onclick="card01.showModal()">Details</button>
+                  <!-- Open the modal using ID.showModal() method -->
+<dialog id="card01" class="modal">
+  <form method="dialog" class="modal-box">
+    <div class="card w-96 bg-base-100 mx-auto">
+      <figure class="px-0 pt-10">
+        <img class="h-24 w-20" src="./images/fruit7.png" alt="Shoes" class="rounded-xl" />
+      </figure>
+      <div class="card-body items-center text-center">
+        <h2 class="card-title font-semibold text-lg md:text-xl">12.90$ - 18.85$</h2>
+        <hr class="w-2/3 h-1 bg-white " />
+        <p class="text-sm font-medium">Orange</p>
+        <!-- rating -->
+        <div class="rating rating-base rating-half">
+          <input type="radio" name="rating-11" class="rating-hidden" />
+          <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
+          <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+          <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-1" checked />
+          <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+          <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
+          <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+          <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
+          <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+          <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
+          <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+        </div>
+
+        <!-- rating end -->
+        <div class="card-actions modal-action">
+          <button class="btn text-primary-text-color font-bold">Buy Now</button>
+          <button class="btn">Close</button>
+        </div>
+      </div>
+    </div>
+
+  </form>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
                 </div>
               </div>
             </div>
@@ -255,17 +300,17 @@
                 <p class="text-sm font-medium">Orange</p>
                 <!-- rating -->
                 <div class="rating rating-base rating-half">
-                  <input type="radio" name="rating-10" class="rating-hidden" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-1" checked />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+                  <input type="radio" name="rating-11" class="rating-hidden" />
+                  <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
+                  <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+                  <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-1" checked />
+                  <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+                  <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
+                  <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+                  <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
+                  <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+                  <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
+                  <input type="radio" name="rating-11" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
                 </div>
 
                 <!-- rating end -->
@@ -285,17 +330,17 @@
                 <p class="text-sm font-medium">Red Dragon</p>
                 <!-- rating -->
                 <div class="rating rating-base rating-half">
-                  <input type="radio" name="rating-10" class="rating-hidden" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-1" checked />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+                  <input type="radio" name="rating-12" class="rating-hidden" />
+                  <input type="radio" name="rating-12" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
+                  <input type="radio" name="rating-12" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+                  <input type="radio" name="rating-12" class="bg-nav-bg-color mask mask-star-2 mask-half-1" checked />
+                  <input type="radio" name="rating-12" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+                  <input type="radio" name="rating-12" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
+                  <input type="radio" name="rating-12" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+                  <input type="radio" name="rating-12" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
+                  <input type="radio" name="rating-12" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+                  <input type="radio" name="rating-12" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
+                  <input type="radio" name="rating-12" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
                 </div>
 
                 <!-- rating end -->
@@ -315,17 +360,17 @@
                 <p class="text-sm font-medium">Banana</p>
                 <!-- rating -->
                 <div class="rating rating-base rating-half">
-                  <input type="radio" name="rating-10" class="rating-hidden" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-1" checked />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
-                  <input type="radio" name="rating-10" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+                  <input type="radio" name="rating-13" class="rating-hidden" />
+                  <input type="radio" name="rating-13" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
+                  <input type="radio" name="rating-13" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+                  <input type="radio" name="rating-13" class="bg-nav-bg-color mask mask-star-2 mask-half-1" checked />
+                  <input type="radio" name="rating-13" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+                  <input type="radio" name="rating-13" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
+                  <input type="radio" name="rating-13" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+                  <input type="radio" name="rating-13" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
+                  <input type="radio" name="rating-13" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
+                  <input type="radio" name="rating-13" class="bg-nav-bg-color mask mask-star-2 mask-half-1" />
+                  <input type="radio" name="rating-13" class="bg-nav-bg-color mask mask-star-2 mask-half-2" />
                 </div>
 
                 <!-- rating end -->
